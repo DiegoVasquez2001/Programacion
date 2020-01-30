@@ -16,6 +16,7 @@ public class FrameSueldos extends javax.swing.JFrame {
      */
     public FrameSueldos() {
         initComponents();
+        this.setTitle("Sistema de Planillas");
     }
 
     /**
@@ -34,6 +35,7 @@ public class FrameSueldos extends javax.swing.JFrame {
         TxtHEx = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12))); // NOI18N
 
@@ -94,6 +96,7 @@ public class FrameSueldos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
