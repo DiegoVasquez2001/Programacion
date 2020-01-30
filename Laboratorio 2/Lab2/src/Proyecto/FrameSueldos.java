@@ -256,6 +256,10 @@ public class FrameSueldos extends javax.swing.JFrame {
             VData[11]=String.valueOf(DSalLiq);
             modelo.addRow(VData);
             TbData.setModel(modelo);
+            //-------------------------------//
+            TxtNombre.setText("");
+            TxtHEx.setText("");
+            TxtNombre.requestFocus();
         }
         catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "VERIFIQUE LA INFORMACIÓN");
@@ -296,10 +300,23 @@ public class FrameSueldos extends javax.swing.JFrame {
                 MatInf[i][2]=String.valueOf(DAuSal);
                 DPgEx=Double.parseDouble(MatInf[i][3]);
                 DIng=Double.parseDouble(MatInf[i][5]);
-                DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
                 MatInf[i][6]=String.valueOf(DTotIng);
-                DIGSS=Double.parseDouble(MatInf[i][7]);
-                DISR=Double.parseDouble(MatInf[i][8]);
+                DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
+                if(DTotIng>6000&&DTotIng<8000){
+                DISR=DTotIng*0.05;
+                }
+                else if(DTotIng>8000&&DTotIng<9500){
+                    DISR=DTotIng*0.06;
+                }
+                else if(DTotIng>9500){
+                    DISR=DTotIng*0.08;
+                }
+                DIGSS=DAuSal*0.0483;
+                DOtrosD=Double.parseDouble(MatInf[i][9]);
+                DTotD=DIGSS+DISR+DOtrosD;
+                MatInf[i][10]=String.valueOf(DTotD);
+                DSLiq=DTotIng-DTotD;
+                MatInf[i][11]=String.valueOf(DSLiq);
             }
             //-----MOSTRAR LOS DATOS MODIFICADOS-----//
              for(int i=0; i<n; i++){
