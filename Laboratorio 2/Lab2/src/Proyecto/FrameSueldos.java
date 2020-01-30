@@ -28,26 +28,31 @@ public class FrameSueldos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GrupoBO = new javax.swing.ButtonGroup();
         Panel1 = new javax.swing.JPanel();
         L1 = new javax.swing.JLabel();
         TxtNombre = new javax.swing.JTextField();
         L2 = new javax.swing.JLabel();
         TxtHEx = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        RG = new javax.swing.JRadioButton();
+        RP = new javax.swing.JRadioButton();
+        CmdOperacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12))); // NOI18N
+        Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        L1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        L1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         L1.setText("Nombre:");
 
-        TxtNombre.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        TxtNombre.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        L2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        L2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         L2.setText("Horas Extra:");
 
-        TxtHEx.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        TxtHEx.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
         Panel1.setLayout(Panel1Layout);
@@ -75,7 +80,45 @@ public class FrameSueldos extends javax.swing.JFrame {
                 .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L2)
                     .addComponent(TxtHEx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Operaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        GrupoBO.add(RG);
+        RG.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RG.setText("Aumento Salarial Generalizado");
+
+        GrupoBO.add(RP);
+        RP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RP.setText("Aumento Salarial por Empleado");
+
+        CmdOperacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CmdOperacion.setText("Ejecutar");
+        CmdOperacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RG)
+                    .addComponent(RP)
+                    .addComponent(CmdOperacion))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RG)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(RP)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CmdOperacion)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,14 +128,18 @@ public class FrameSueldos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(328, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,10 +182,15 @@ public class FrameSueldos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CmdOperacion;
+    private javax.swing.ButtonGroup GrupoBO;
     private javax.swing.JLabel L1;
     private javax.swing.JLabel L2;
     private javax.swing.JPanel Panel1;
+    private javax.swing.JRadioButton RG;
+    private javax.swing.JRadioButton RP;
     private javax.swing.JTextField TxtHEx;
     private javax.swing.JTextField TxtNombre;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
