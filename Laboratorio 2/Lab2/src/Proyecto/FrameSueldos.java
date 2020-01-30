@@ -192,7 +192,9 @@ public class FrameSueldos extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    /*------© DIEGO VÁSQUEZ 9959-19-19543 -PROGRA I---//
+                LABORATORIO #2
+    ---------------------------------------------------*/
     //--- SALARIO MÍNIMO ES UNA CONSTANTE ---//
     static final double DSalMin=2825.15;
     //--- BONIFICACIÓN LEGAL ES UNA CONSTANTE ---//
@@ -261,24 +263,45 @@ public class FrameSueldos extends javax.swing.JFrame {
     }//GEN-LAST:event_CmdAceptarActionPerformed
 
     private void CmdOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmdOperacionActionPerformed
+       /*------© DIEGO VÁSQUEZ 9959-19-19543 -PROGRA I---//
+                LABORATORIO #2
+         ---------------------------------------------------*/
         int n;
         n=TbData.getRowCount();
         String[][] MatInf = new String[n][12];
         //------------------------------------//
         double DAuSal=0;
         double DPorcentaje=0;
+        //-----------------------//
+        double DPgEx=0;
+        double DIng=0;
+        double DTotIng=0;
+        double DIGSS=0;
+        double DISR=0;
+        double DOtrosD=0;
+        double DTotD=0;
+        double DSLiq=0;
+        //-----------------------//
         DPorcentaje = Double.parseDouble(JOptionPane.showInputDialog(null, "INGRESE % DE AUMENTO"));
-        //------------------------------------//
+        //--------TOMA DE INFORMACIÓN Y TRASLADO A MATRIZ---------//
         if(RG.isSelected()==true){
             for(int i=0; i<n; i++){
                 for(int j=0; j<12; j++){
                     MatInf[i][j]= String.valueOf(TbData.getValueAt(i, j));
                 }
             }
+            //---- RECALCULO DE VALORES ----///
             DAuSal=DSalMin+(DSalMin*(DPorcentaje/100));
             for(int i=0; i<n; i++){
                 MatInf[i][2]=String.valueOf(DAuSal);
+                DPgEx=Double.parseDouble(MatInf[i][3]);
+                DIng=Double.parseDouble(MatInf[i][5]);
+                DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
+                MatInf[i][6]=String.valueOf(DTotIng);
+                DIGSS=Double.parseDouble(MatInf[i][7]);
+                DISR=Double.parseDouble(MatInf[i][8]);
             }
+            //-----MOSTRAR LOS DATOS MODIFICADOS-----//
              for(int i=0; i<n; i++){
                 for(int j=0; j<12; j++){
                     TbData.setValueAt(String.valueOf(MatInf[i][j]), i, j);
