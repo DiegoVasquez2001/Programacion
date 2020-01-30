@@ -300,8 +300,8 @@ public class FrameSueldos extends javax.swing.JFrame {
                 MatInf[i][2]=String.valueOf(DAuSal);
                 DPgEx=Double.parseDouble(MatInf[i][3]);
                 DIng=Double.parseDouble(MatInf[i][5]);
-                MatInf[i][6]=String.valueOf(DTotIng);
                 DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
+                MatInf[i][6]=String.valueOf(DTotIng);
                 if(DTotIng>6000&&DTotIng<8000){
                 DISR=DTotIng*0.05;
                 }
@@ -311,7 +311,7 @@ public class FrameSueldos extends javax.swing.JFrame {
                 else if(DTotIng>9500){
                     DISR=DTotIng*0.08;
                 }
-                DIGSS=DAuSal*0.0483;
+                DIGSS=DTotIng*0.0483;
                 DOtrosD=Double.parseDouble(MatInf[i][9]);
                 DTotD=DIGSS+DISR+DOtrosD;
                 MatInf[i][10]=String.valueOf(DTotD);
@@ -326,7 +326,7 @@ public class FrameSueldos extends javax.swing.JFrame {
             }
         }
         else if(RP.isSelected()==true){
-            
+            //PENDIENTE
         }
     }//GEN-LAST:event_CmdOperacionActionPerformed
 
