@@ -297,13 +297,12 @@ public class FrameSueldos extends javax.swing.JFrame {
             //---- RECALCULO DE VALORES ----///
             DAuSal=DSalMin+(DSalMin*(DPorcentaje/100));
             for(int i=0; i<n; i++){
-                MatInf[i][2]=String.valueOf(DAuSal);
                 DPgEx=Double.parseDouble(MatInf[i][3]);
                 DIng=Double.parseDouble(MatInf[i][5]);
                 DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
-                MatInf[i][6]=String.valueOf(DTotIng);
+                
                 if(DTotIng>6000&&DTotIng<8000){
-                DISR=DTotIng*0.05;
+                    DISR=DTotIng*0.05;
                 }
                 else if(DTotIng>8000&&DTotIng<9500){
                     DISR=DTotIng*0.06;
@@ -314,8 +313,10 @@ public class FrameSueldos extends javax.swing.JFrame {
                 DIGSS=DTotIng*0.0483;
                 DOtrosD=Double.parseDouble(MatInf[i][9]);
                 DTotD=DIGSS+DISR+DOtrosD;
-                MatInf[i][10]=String.valueOf(DTotD);
                 DSLiq=DTotIng-DTotD;
+                MatInf[i][2]=String.valueOf(DAuSal);
+                MatInf[i][6]=String.valueOf(DTotIng);
+                MatInf[i][10]=String.valueOf(DTotD);
                 MatInf[i][11]=String.valueOf(DSLiq);
             }
             //-----MOSTRAR LOS DATOS MODIFICADOS-----//
