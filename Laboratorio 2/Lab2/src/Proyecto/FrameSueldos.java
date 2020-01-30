@@ -116,6 +116,11 @@ public class FrameSueldos extends javax.swing.JFrame {
         CmdOperacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CmdOperacion.setText("Ejecutar");
         CmdOperacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CmdOperacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CmdOperacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
@@ -254,6 +259,36 @@ public class FrameSueldos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "VERIFIQUE LA INFORMACIÓN");
         }     
     }//GEN-LAST:event_CmdAceptarActionPerformed
+
+    private void CmdOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmdOperacionActionPerformed
+        int n;
+        n=TbData.getRowCount();
+        String[][] MatInf = new String[n][12];
+        //------------------------------------//
+        double DAuSal=0;
+        double DPorcentaje=0;
+        DPorcentaje = Double.parseDouble(JOptionPane.showInputDialog(null, "INGRESE % DE AUMENTO"));
+        //------------------------------------//
+        if(RG.isSelected()==true){
+            for(int i=0; i<n; i++){
+                for(int j=0; j<12; j++){
+                    MatInf[i][j]= String.valueOf(TbData.getValueAt(i, j));
+                }
+            }
+            DAuSal=DSalMin+(DSalMin*(DPorcentaje/100));
+            for(int i=0; i<n; i++){
+                MatInf[i][2]=String.valueOf(DAuSal);
+            }
+             for(int i=0; i<n; i++){
+                for(int j=0; j<12; j++){
+                    TbData.setValueAt(String.valueOf(MatInf[i][j]), i, j);
+                }
+            }
+        }
+        else if(RP.isSelected()==true){
+            
+        }
+    }//GEN-LAST:event_CmdOperacionActionPerformed
 
     /**
      * @param args the command line arguments
