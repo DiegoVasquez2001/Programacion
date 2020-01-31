@@ -316,6 +316,7 @@ public class FrameSueldos extends javax.swing.JFrame {
                 DSLiq=DTotIng-DTotD;
                 MatInf[i][2]=String.valueOf(DAuSal);
                 MatInf[i][6]=String.valueOf(DTotIng);
+                MatInf[i][8]=String.valueOf(DISR);
                 MatInf[i][10]=String.valueOf(DTotD);
                 MatInf[i][11]=String.valueOf(DSLiq);
             }
