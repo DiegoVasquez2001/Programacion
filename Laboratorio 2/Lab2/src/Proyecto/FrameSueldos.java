@@ -5,6 +5,7 @@
  */
 package Proyecto;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +21,7 @@ public class FrameSueldos extends javax.swing.JFrame {
     public FrameSueldos() {
         initComponents();
         this.setTitle("Sistema de Planillas");
+        this.getContentPane().setBackground(new Color(0, 70, 90));
     }
 
     /**
@@ -48,19 +50,24 @@ public class FrameSueldos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        Panel1.setBackground(new java.awt.Color(0, 70, 90));
+        Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
         L1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        L1.setForeground(new java.awt.Color(255, 255, 255));
         L1.setText("Nombre:");
 
         TxtNombre.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         L2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        L2.setForeground(new java.awt.Color(255, 255, 255));
         L2.setText("Horas Extra:");
 
         TxtHEx.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
+        CmdAceptar.setBackground(new java.awt.Color(0, 30, 60));
         CmdAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CmdAceptar.setForeground(new java.awt.Color(255, 255, 255));
         CmdAceptar.setText("Aceptar");
         CmdAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CmdAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -103,17 +110,24 @@ public class FrameSueldos extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        Panel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Operaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        Panel2.setBackground(new java.awt.Color(0, 70, 90));
+        Panel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
+        RG.setBackground(new java.awt.Color(0, 70, 90));
         GrupoBO.add(RG);
         RG.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RG.setForeground(new java.awt.Color(255, 255, 255));
         RG.setText("Aumento Salarial Generalizado");
 
+        RP.setBackground(new java.awt.Color(0, 70, 90));
         GrupoBO.add(RP);
         RP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RP.setForeground(new java.awt.Color(255, 255, 255));
         RP.setText("Aumento Salarial por Empleado");
 
+        CmdOperacion.setBackground(new java.awt.Color(0, 30, 60));
         CmdOperacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CmdOperacion.setForeground(new java.awt.Color(255, 255, 255));
         CmdOperacion.setText("Ejecutar");
         CmdOperacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CmdOperacion.addActionListener(new java.awt.event.ActionListener() {
@@ -149,9 +163,7 @@ public class FrameSueldos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        TbData.setBackground(new java.awt.Color(102, 102, 102));
         TbData.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        TbData.setForeground(new java.awt.Color(255, 255, 255));
         TbData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
