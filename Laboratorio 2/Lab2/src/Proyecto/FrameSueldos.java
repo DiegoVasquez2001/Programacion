@@ -328,7 +328,41 @@ public class FrameSueldos extends javax.swing.JFrame {
             }
         }
         else if(RP.isSelected()==true){
-            //PENDIENTE
+            for(int i=0; i<n; i++){
+                for(int j=0; j<12; j++){
+                    MatInf[i][j]= String.valueOf(TbData.getValueAt(i, j));
+                }
+            }
+           int codigoEmpleado=0;
+           codigoEmpleado=Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE CÓDIGO DEL EMPLEADO"));
+          DAuSal=DSalMin+(DSalMin*(DPorcentaje/100));
+           DPgEx=Double.parseDouble(MatInf[codigoEmpleado-1][3]);
+                DIng=Double.parseDouble(MatInf[codigoEmpleado-1][5]);
+                DTotIng=DAuSal+DPgEx+DBonusLeg+DIng;
+                
+                if(DTotIng>6000&&DTotIng<8000){
+                    DISR=DTotIng*0.05;
+                }
+                else if(DTotIng>8000&&DTotIng<9500){
+                    DISR=DTotIng*0.06;
+                }
+                else if(DTotIng>9500){
+                    DISR=DTotIng*0.08;
+                }
+                DIGSS=DTotIng*0.0483;
+                DOtrosD=Double.parseDouble(MatInf[codigoEmpleado-1][9]);
+                DTotD=DIGSS+DISR+DOtrosD;
+                DSLiq=DTotIng-DTotD;
+                MatInf[codigoEmpleado-1][2]=String.valueOf(DAuSal);
+                MatInf[codigoEmpleado-1][6]=String.valueOf(DTotIng);
+                MatInf[codigoEmpleado-1][8]=String.valueOf(DISR);
+                MatInf[codigoEmpleado-1][10]=String.valueOf(DTotD);
+                MatInf[codigoEmpleado-1][11]=String.valueOf(DSLiq);
+            for(int i=0; i<n; i++){
+                for(int j=0; j<12; j++){
+                    TbData.setValueAt(String.valueOf(MatInf[i][j]), i, j);
+                }
+            }
         }
     }//GEN-LAST:event_CmdOperacionActionPerformed
 
